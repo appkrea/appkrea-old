@@ -1,0 +1,22 @@
+// Stylesheet: Base Mobile Stylesheet
+
+body {
+  background: linear-gradient(135deg, #931ed0 0%, #00a0ab 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-family: sans-serif;
+  h2 {
+    padding: 1em;
+    font-size: 1em;
+  }
+  img {
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+  }
+}
