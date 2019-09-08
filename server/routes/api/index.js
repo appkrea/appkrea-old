@@ -1,7 +1,9 @@
 const api = require('express').Router();
 
-api.get('/', (req, res) => {
-  res.send('api is working');
-});
+// weather endpoint
+const getNearestCity = require('./weather/controllers/getNearestCity');
+
+// weather endpoint
+api.get('/weather/city/nearest', getNearestCity);
 
 module.exports = api;
