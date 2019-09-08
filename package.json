@@ -46,6 +46,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
+    "request": "^2.88.0",
     "serve-favicon": "^2.5.0",
     "webpack": "^4.37.0",
     "webpack-dev-middleware": "^3.7.0",
