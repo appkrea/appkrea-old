@@ -5,7 +5,7 @@ module.exports = (req, res) => {
   const { lat, lon } = req.query;
   const options = {
     method: 'GET',
-    url: `https://webcamstravel.p.rapidapi.com/webcams/list/nearby=${lat},${lon},50`,
+    url: `https://webcamstravel.p.rapidapi.com/webcams/list/nearby=${lat},${lon},5`,
     qs: {
       lang: 'en',
       show: 'webcams:image,location',
