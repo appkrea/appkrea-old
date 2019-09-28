@@ -1,18 +1,24 @@
-const Fuse = require('fuse.js');
+const FlexSearch = require('flexsearch');
 const cities = require('../data/city.list.json');
+
+const index = new FlexSearch();
+
+for (let i = 0; i < cities.length; i += 1) {
+  index.add(i, cities[i].name);
+  console.log('s');
+}
 
 // eslint-disable-next-line no-unused-vars
 module.exports = (req, res) => {
-  const fuse = new Fuse(cities, {
-    shouldSort: true,
-    threshold: 0.6,
-    location: 0,
-    distance: 100,
-    maxPatternLength: 32,
-    minMatchCharLength: 1,
-    keys: [
-      'name',
-    ],
+  console.log(req.query.q);
+  index.search(req.query.q, {
+    limit: 5,
+  }, (results) => {
+    console.log(results);
+    const response = [];
+    for (let i = 0; i < results.length; i += 1) {
+      response.push(cities[results[i]]);
+    }
+    res.json(response);
   });
-  res.send(fuse.search((req.query.q)).slice(0, 10));
 };
